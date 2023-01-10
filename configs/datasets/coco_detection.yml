@@ -11,3 +11,12 @@ EvalDataset: !COCODataSet
   image_dir: data
   anno_path: labels.json
   dataset_dir: /content/test_destination_COCO
+
+EvalMOTDataset: !MOTImageFolder
+  dataset_dir: /content/test_destination_COCO
+  data_root: data
+  keep_ori_im: True # set as True in DeepSORT and ByteTrack
+
+TestMOTDataset: !MOTImageFolder
+  dataset_dir: content/test_destination_COCO/data
+  keep_ori_im: True # set True if save visualization images or video

@@ -1,9 +1,10 @@
 # This config is an assembled config for ByteTrack MOT, used as eval/infer mode for MOT.
-_BASE_: [
-  'detector/ppyoloe_crn_l_36e_640x640_mot17half.yml',
-  '_base_/mot17.yml',
-  '_base_/ppyoloe_mot_reader_640x640.yml'
-]
+_BASE_:
+  [
+    "detector/ppyoloe_crn_l_36e_640x640_mot17half.yml",
+    "../datasets/coco_detection.yml",
+    "_base_/ppyoloe_mot_reader_640x640.yml",
+  ]
 weights: output/bytetrack_ppyoloe/model_final
 log_iter: 20
 snapshot_epoch: 2
@@ -33,7 +34,7 @@ PPYOLOEHead:
   grid_cell_offset: 0.5
   static_assigner_epoch: -1 # 100
   use_varifocal_loss: True
-  loss_weight: {class: 1.0, iou: 2.5, dfl: 0.5}
+  loss_weight: { class: 1.0, iou: 2.5, dfl: 0.5 }
   static_assigner:
     name: ATSSAssigner
     topk: 9
