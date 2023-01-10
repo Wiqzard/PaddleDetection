@@ -2,7 +2,7 @@
 _BASE_:
   [
     "detector/ppyoloe_crn_l_36e_640x640_mot17half.yml",
-    "../datasets/coco_detection.yml",
+    "_base_/coco_detection.yml",
     "_base_/ppyoloe_mot_reader_640x640.yml",
   ]
 weights: output/bytetrack_ppyoloe/model_final
