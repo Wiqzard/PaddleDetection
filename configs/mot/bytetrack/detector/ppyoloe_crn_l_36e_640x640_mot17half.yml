@@ -1,9 +1,6 @@
 # This config is an assembled config for ByteTrack MOT, used as eval/infer mode for MOT.
 _BASE_:
-  [
-    "../../../ppyoloe/ppyoloe_crn_l_300e_coco.yml",
-    "../datasets/coco_detection.yml",
-  ]
+  ["../../../ppyoloe/ppyoloe_crn_l_300e_coco.yml", "_base_/coco_detection.yml"]
 weights: output/ppyoloe_crn_l_36e_640x640_mot17half/model_final
 log_iter: 20
 snapshot_epoch: 2
